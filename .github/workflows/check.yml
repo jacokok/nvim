@@ -1,0 +1,21 @@
+name: Validate Nix Flake
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  check-flake:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          logger: pretty
+
+      - name: Check Flake
+        run: nix flake check --accept-flake-config
