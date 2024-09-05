@@ -9,7 +9,7 @@ This config is a work in progress and for my personal use.
 ## Run
 
 ```bash
-nix run github:doink/nvim
+nix run github:jacokok/nvim
 ```
 
 ## Setup Code
@@ -25,7 +25,7 @@ nix run .
 ```nix
 {
   inputs = {
-    nixvim-flake.url = "github:github:doink/nvim";
+    nixvim-flake.url = "github:jacokok/nvim";
   };
 }
 ```
