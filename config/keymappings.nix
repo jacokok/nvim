@@ -1,5 +1,18 @@
-{self, ...}: {
+{ self, ... }: {
   keymaps = [
+    # Oil
+    {
+      mode = "n";
+      action = "<CMD>Oil<CR>";
+      key = "-";
+    }
+    # ToggleTerm
+    {
+      mode = "n";
+      action = "<CMD>ToggleTerm<CR>";
+      key = "`";
+    }
+
     # Neo-tree bindings
     {
       action = "<cmd>Neotree toggle<CR>";
@@ -33,31 +46,30 @@
     }
 
     # Telescope bindings
-
-    {
-      action = "<cmd>Telescope live_grep<CR>";
-      key = "<leader>fw";
-    }
-    {
-      action = "<cmd>Telescope find_files<CR>";
-      key = "<leader>ff";
-    }
-    {
-      action = "<cmd>Telescope git_commits<CR>";
-      key = "<leader>fg";
-    }
-    {
-      action = "<cmd>Telescope oldfiles<CR>";
-      key = "<leader>fh";
-    }
-    {
-      action = "<cmd>Telescope colorscheme<CR>";
-      key = "<leader>ch";
-    }
-    {
-      action = "<cmd>Telescope man_pages<CR>";
-      key = "<leader>fm";
-    }
+    # {
+    #   action = "<cmd>Telescope live_grep<CR>";
+    #   key = "<leader>fw";
+    # }
+    # {
+    #   action = "<cmd>Telescope find_files<CR>";
+    #   key = "<leader>ff";
+    # }
+    # {
+    #   action = "<cmd>Telescope git_commits<CR>";
+    #   key = "<leader>fg";
+    # }
+    # {
+    #   action = "<cmd>Telescope oldfiles<CR>";
+    #   key = "<leader>fh";
+    # }
+    # {
+    #   action = "<cmd>Telescope colorscheme<CR>";
+    #   key = "<leader>ch";
+    # }
+    # {
+    #   action = "<cmd>Telescope man_pages<CR>";
+    #   key = "<leader>fm";
+    # }
 
     # Notify bindings
 
