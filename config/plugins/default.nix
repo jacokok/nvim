@@ -1,14 +1,14 @@
 { pkgs, ... }: {
+
+  imports = [
+    ./alpha.nix
+    ./lualine.nix
+  ];
+
   plugins = {
+
+    # Top Tab bar
     bufferline = {
-      enable = true;
-    };
-
-    lualine = {
-      enable = true;
-    };
-
-    oil = {
       enable = true;
     };
 
@@ -27,18 +27,11 @@
       enable = true;
     };
 
-    # Dashboard
-    alpha = {
-      enable = true;
-      theme = "dashboard";
-    };
-
     # Prettier fancier command window
-    noice = {
-      enable = true;
-    };
+    # noice = {
+    #   enable = true;
+    # };
 
-    # Good old Telescope
     telescope = {
       enable = true;
       extensions = {
@@ -48,13 +41,23 @@
       };
     };
 
-    persistence.enable = true;
+    oil = {
+      enable = true;
+    };
 
+    # Saves your last session when you exit
+    persistence = {
+      enable = true;
+    };
+
+    # Sidebar showing trouble and diagnsotics
     trouble = {
       enable = true;
     };
 
-    commentary.enable = true;
+    commentary = {
+      enable = true;
+    };
 
     toggleterm = {
       enable = true;
@@ -62,7 +65,7 @@
         hide_numbers = false;
         autochdir = true;
         close_on_exit = true;
-        direction = "vertical";
+        direction = "float";
       };
     };
 
@@ -73,7 +76,7 @@
       enableModifiedMarkers = true;
       enableRefreshOnWrite = true;
       closeIfLastWindow = true;
-      popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
+      popupBorderStyle = "rounded";
       buffers = {
         bindToCwd = false;
         followCurrentFile = {
@@ -90,10 +93,34 @@
       };
     };
 
+    undotree = {
+      enable = true;
+      settings = {
+        autoOpenDiff = true;
+        focusOnToggle = true;
+      };
+    };
+
+    # Todo comments
+    todo-comments = {
+      enable = true;
+    };
+
     # Nix expressions in Neovim
     nix = {
       enable = true;
     };
+
+    which-key = {
+      enable = true;
+    };
+
+    # Markdown preview server
+    markdown-preview = {
+      enable = true;
+      settings.theme = "dark";
+    };
+
 
     # Language server
     lsp = {
@@ -132,10 +159,6 @@
           installCargo = true;
         };
       };
-    };
-
-    cmp-emoji = {
-      enable = true;
     };
 
     cmp = {
@@ -186,6 +209,10 @@
           "<S-CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
         };
       };
+    };
+
+    cmp-emoji = {
+      enable = true;
     };
     cmp-nvim-lsp = {
       enable = true; # LSP
@@ -248,19 +275,19 @@
     };
 
     # Lazygit
-    lazygit = {
-      enable = true;
-    };
+    # lazygit = {
+    #   enable = true;
+    # };
 
     # Notify
-    notify = {
-      enable = true;
-      backgroundColour = "#1e1e2e";
-      fps = 60;
-      render = "default";
-      timeout = 500;
-      topDown = true;
-    };
+    # notify = {
+    #   enable = true;
+    #   backgroundColour = "#1e1e2e";
+    #   fps = 60;
+    #   render = "default";
+    #   timeout = 500;
+    #   topDown = true;
+    # };
 
   };
 }

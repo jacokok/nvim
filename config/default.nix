@@ -1,6 +1,6 @@
 {
   imports = [
-    ./plugins.nix
+    ./plugins
     ./options.nix
     ./keymappings.nix
     ./style.nix
