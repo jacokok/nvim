@@ -3,6 +3,10 @@
   imports = [
     ./alpha.nix
     ./lualine.nix
+    ./telescope.nix
+    ./toggleTerm.nix
+    ./neoTree.nix
+    ./undoTree.nix
   ];
 
   plugins = {
@@ -32,15 +36,6 @@
     #   enable = true;
     # };
 
-    telescope = {
-      enable = true;
-      extensions = {
-        fzf-native = {
-          enable = true;
-        };
-      };
-    };
-
     oil = {
       enable = true;
     };
@@ -57,48 +52,6 @@
 
     commentary = {
       enable = true;
-    };
-
-    toggleterm = {
-      enable = true;
-      settings = {
-        hide_numbers = false;
-        autochdir = true;
-        close_on_exit = true;
-        direction = "float";
-      };
-    };
-
-    neo-tree = {
-      enable = true;
-      enableDiagnostics = true;
-      enableGitStatus = true;
-      enableModifiedMarkers = true;
-      enableRefreshOnWrite = true;
-      closeIfLastWindow = true;
-      popupBorderStyle = "rounded";
-      buffers = {
-        bindToCwd = false;
-        followCurrentFile = {
-          enabled = true;
-        };
-      };
-      window = {
-        width = 40;
-        height = 15;
-        autoExpandWidth = false;
-        mappings = {
-          "<space>" = "none";
-        };
-      };
-    };
-
-    undotree = {
-      enable = true;
-      settings = {
-        autoOpenDiff = true;
-        focusOnToggle = true;
-      };
     };
 
     # Todo comments
@@ -120,7 +73,6 @@
       enable = true;
       settings.theme = "dark";
     };
-
 
     # Language server
     lsp = {
@@ -273,21 +225,5 @@
         };
       };
     };
-
-    # Lazygit
-    # lazygit = {
-    #   enable = true;
-    # };
-
-    # Notify
-    # notify = {
-    #   enable = true;
-    #   backgroundColour = "#1e1e2e";
-    #   fps = 60;
-    #   render = "default";
-    #   timeout = 500;
-    #   topDown = true;
-    # };
-
   };
 }
