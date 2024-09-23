@@ -74,12 +74,17 @@
       settings.theme = "dark";
     };
 
+    web-devicons = {
+      enable = true;
+    };
+
     # Language server
     lsp = {
       enable = true;
       servers = {
         # Average webdev LSPs
-        tsserver.enable = true; # TS/JS
+        #tsserver.enable = true; # TS/JS
+        ts-ls.enable = true;
         cssls.enable = true; # CSS
         tailwindcss.enable = true; # TailwindCSS
         html.enable = true; # HTML
