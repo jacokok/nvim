@@ -2,7 +2,7 @@
   globalOpts = {
     # Line numbers
     number = true;
-    # relativenumber = true;
+    relativenumber = true;
 
     # Always show the signcolumn, otherwise text would be shifted when displaying error icons
     signcolumn = "yes";

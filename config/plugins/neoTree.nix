@@ -16,6 +16,7 @@
     window = {
       width = 40;
       height = 15;
+      position = "right";
       autoExpandWidth = false;
       mappings = {
         "<space>" = "none";
