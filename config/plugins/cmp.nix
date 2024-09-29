@@ -52,7 +52,7 @@
       };
     };
 
-    cmp-emoji = {
+            cmp-emoji = {
       enable = true;
     };
     cmp-nvim-lsp = {

@@ -1,8 +1,1 @@
-{
-  imports = [
-    ./plugins
-    ./options.nix
-    ./keymappings.nix
-    ./style.nix
-  ];
-}
+{ imports = [ ./plugins ./options.nix ./keymappings.nix ./style.nix ]; }

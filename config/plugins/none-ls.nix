@@ -1,6 +1,6 @@
-
 { ... }: {
   plugins = {
+    lsp-format.enable = true;
     none-ls = {
       enable = true;
       settings = {
@@ -28,6 +28,8 @@
             enable = true;
             disableTsServerFormatter = true;
           };
+          csharpier.enable = true;
+          nixfmt.enable = true;
           black = {
             enable = true;
             settings = ''
@@ -35,7 +37,6 @@
                 extra_args = { "--fast" },
               }
             '';
-
           };
         };
         completion = {
