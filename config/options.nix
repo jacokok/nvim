@@ -6,6 +6,7 @@
 
     # Always show the signcolumn, otherwise text would be shifted when displaying error icons
     signcolumn = "yes";
+    # clipboard = "unnamedplus";
 
     # Search
     ignorecase = true;
@@ -17,40 +18,27 @@
     softtabstop = 0;
     expandtab = true;
     smarttab = true;
-
-    # System clipboard support, needs xclip/wl-clipboard
-    #clipboard = "unnamedplus";
-
-    # Highlight the current line
     cursorline = true;
 
     # Show line and column when searching
     ruler = true;
+    undofile = true;
+    autoindent = true;
 
     # Global substitution by default
     gdefault = true;
 
     # Start scrolling when the cursor is X lines away from the top/bottom
     scrolloff = 5;
+    termguicolors = true;
   };
-
-  # userCommands = {
-  #   Q.command = "q";
-  #   Q.bang = true;
-  #   Wq.command = "q";
-  #   Wq.bang = true;
-  #   WQ.command = "q";
-  #   WQ.bang = true;
-  #   W.command = "q";
-  #   W.bang = true;
-  # };
 
   globals.mapleader = " ";
 
-  # highlight = {
-  #   Comment.fg = "#ff00ff";
-  #   Comment.bg = "#000000";
-  #   Comment.underline = true;
-  #   Comment.bold = true;
-  # };
+  autoCmd = [
+    {
+      event = "TermOpen";
+      command = "setlocal nonumber norelativenumber";
+    }
+  ];
 }

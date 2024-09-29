@@ -1,11 +1,71 @@
 { self, ... }: {
   keymaps = [
     # Custom
+    # Move line
     {
       mode = "n";
-      action = "\"_dP";
+      action = ":m+<CR>==";
+      key = "<A-j>";
+    }
+    {
+      mode = "n";
+      action = ":m+<CR>==";
+      key = "<A-down>";
+    }
+    {
+      mode = "i";
+      action = "<Esc>:m+<CR>==gi";
+      key = "<A-j>";
+    }
+    {
+      mode = "i";
+      action = "<Esc>:m+<CR>==gi";
+      key = "<A-down>";
+    }
+    {
+      mode = "n";
+      action = ":m-2<CR>==";
+      key = "<A-k>";
+    }
+    {
+      mode = "n";
+      action = ":m-2<CR>==";
+      key = "<A-up>";
+    }
+    {
+      mode = "i";
+      action = "<Esc>:m-2<CR>==gi";
+      key = "<A-up>";
+    }
+    {
+      mode = "i";
+      action = "<Esc>:m-2<CR>==gi";
+      key = "<A-up>";
+    }
+
+    # Copy paste Clipboard    
+    {
+      mode = "n";
+      action = "\"+y";
+      key = "<leader>y";
+    }
+    {
+      mode = "v";
+      action = "\"+y";
+      key = "<leader>y";
+    }
+    {
+      mode = "n";
+      action = "\"+p";
       key = "<leader>p";
     }
+    {
+      mode = "v";
+      action = "\"+p";
+      key = "<leader>p";
+    }
+
+
     # Oil
     {
       mode = "n";
@@ -57,17 +117,29 @@
       key = "<leader>fw";
     }
     {
+      action = "<cmd>Telescope live_grep<CR>";
+      key = "<C-f>";
+    }
+    {
       action = "<cmd>Telescope find_files<CR>";
       key = "<leader>ff";
     }
-    #{
-    #  action = "<cmd>Telescope git_commits<CR>";
-    #  key = "<leader>fg";
-    #}
-    # {
-    #   action = "<cmd>Telescope oldfiles<CR>";
-    #   key = "<leader>fh";
-    # }
+    {
+      action = "<cmd>Telescope find_files<CR>";
+      key = "<C-p>";
+    }
+    {
+      action = "<cmd>Telescope git_commits<CR>";
+      key = "<leader>fg";
+    }
+    {
+      action = "<cmd>Telescope oldfiles<CR>";
+      key = "<leader>fh";
+    }
+    {
+      action = "<cmd>Telescope buffers<CR>";
+      key = "<leader>fb";
+    }
     # {
     #   action = "<cmd>Telescope colorscheme<CR>";
     #   key = "<leader>ch";
