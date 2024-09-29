@@ -1,7 +1,5 @@
-
-{ ... }: {
+{
   plugins = {
-
     cmp = {
       enable = true;
       settings = {
@@ -47,20 +45,17 @@
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-Space>" = "cmp.mapping.complete()";
           "<CR>" = "cmp.mapping.confirm({ select = true })";
-          "<S-CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+          "<S-CR>" =
+            "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
         };
       };
     };
 
-            cmp-emoji = {
-      enable = true;
-    };
+    cmp-emoji = { enable = true; };
     cmp-nvim-lsp = {
       enable = true; # LSP
     };
-    cmp-buffer = {
-      enable = true;
-    };
+    cmp-buffer = { enable = true; };
     cmp-path = {
       enable = true; # file system paths
     };

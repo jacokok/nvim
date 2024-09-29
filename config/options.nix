@@ -1,4 +1,4 @@
-{ self, ... }: {
+{
   globalOpts = {
     # Line numbers
     number = true;
@@ -35,10 +35,8 @@
 
   globals.mapleader = " ";
 
-  autoCmd = [
-    {
-      event = "TermOpen";
-      command = "setlocal nonumber norelativenumber";
-    }
-  ];
+  autoCmd = [{
+    event = "TermOpen";
+    command = "setlocal nonumber norelativenumber";
+  }];
 }

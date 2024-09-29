@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-
+{
   imports = [
     ./alpha.nix
     ./lualine.nix
@@ -13,70 +12,41 @@
   ];
 
   plugins = {
-
     # Top Tab bar
-    bufferline = {
-      enable = true;
-    };
+    bufferline = { enable = true; };
 
     # Includes all parsers for treesitter
-    treesitter = {
-      enable = true;
-    };
+    treesitter = { enable = true; };
 
     # Auto-tagging
-    ts-autotag = {
-      enable = true;
-    };
+    ts-autotag = { enable = true; };
 
     # Autopairs
-    nvim-autopairs = {
-      enable = true;
-    };
+    nvim-autopairs = { enable = true; };
 
-    oil = {
-      enable = true;
-    };
+    oil = { enable = true; };
 
     # Saves your last session when you exit
-    persistence = {
-      enable = true;
-    };
+    persistence = { enable = true; };
 
     # Sidebar showing trouble and diagnsotics
-    trouble = {
-      enable = true;
-    };
+    trouble = { enable = true; };
 
-    lspkind = {
-      enable = true;
-    };
+    lspkind = { enable = true; };
 
-    commentary = {
-      enable = true;
-    };
+    commentary = { enable = true; };
 
     # Todo comments
-    todo-comments = {
-      enable = true;
-    };
+    todo-comments = { enable = true; };
 
     # Nix expressions in Neovim
-    nix = {
-      enable = true;
-    };
+    nix = { enable = true; };
 
-    which-key = {
-      enable = true;
-    };
+    which-key = { enable = true; };
 
-    lazygit = {
-      enable = true;
-    };
+    lazygit = { enable = true; };
 
-    gitsigns = {
-      enable = true;
-    };
+    gitsigns = { enable = true; };
 
     # noice = {
     #   enable = true;
@@ -94,15 +64,12 @@
       settings.theme = "dark";
     };
 
-    web-devicons = {
-      enable = true;
-    };
+    web-devicons = { enable = true; };
 
     schemastore = {
       enable = true;
       yaml.enable = true;
       json.enable = true;
     };
-
   };
 }

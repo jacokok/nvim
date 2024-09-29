@@ -1,4 +1,4 @@
-{ ... }: {
+{
   plugins.neo-tree = {
     enable = true;
     enableDiagnostics = true;
@@ -9,18 +9,14 @@
     popupBorderStyle = "rounded";
     buffers = {
       bindToCwd = false;
-      followCurrentFile = {
-        enabled = true;
-      };
+      followCurrentFile = { enabled = true; };
     };
     window = {
       width = 40;
       height = 15;
       position = "right";
       autoExpandWidth = false;
-      mappings = {
-        "<space>" = "none";
-      };
+      mappings = { "<space>" = "none"; };
     };
   };
 }

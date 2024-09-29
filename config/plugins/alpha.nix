@@ -1,4 +1,4 @@
-{ ... }: {
+{
   plugins.alpha = {
     enable = true;
     theme = null;
@@ -20,8 +20,8 @@
           val = [
             ".------. .------."
             "|K.--. | |J.--. |"
-            "| ://\: | | :(): |"
-            "| :/\/: | | ()() |"
+            "| ://: | | :(): |"
+            "| ://: | | ()() |"
             "| '--'K| | '--'J|"
             "`------' `------'"
           ];
@@ -58,9 +58,7 @@
         {
           type = "button";
           val = "  New File";
-          on_press = {
-            __raw = "function() vim.cmd[[ene]] end";
-          };
+          on_press = { __raw = "function() vim.cmd[[ene]] end"; };
           opts = {
             # hl = "comment";
             keymap = [
@@ -142,9 +140,7 @@
         {
           type = "button";
           val = "  Restore Session";
-          on_press = {
-            __raw = "function() require('persistence').load() end";
-          };
+          on_press = { __raw = "function() require('persistence').load() end"; };
           opts = {
             # hl = "comment";
             keymap = [
@@ -170,9 +166,7 @@
         {
           type = "button";
           val = "  Quit Neovim";
-          on_press = {
-            __raw = "function() vim.cmd[[qa]] end";
-          };
+          on_press = { __raw = "function() vim.cmd[[qa]] end"; };
           opts = {
             # hl = "comment";
             keymap = [

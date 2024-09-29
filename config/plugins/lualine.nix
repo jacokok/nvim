@@ -1,4 +1,4 @@
-{ ... }: {
+{
   plugins.lualine = {
     enable = true;
     settings = {
@@ -15,20 +15,16 @@
       };
 
       sections = {
-        lualine_a = [
-          {
-            __unkeyed-1 = "mode";
-            separator.left = "";
-            padding = 2;
-          }
-        ];
-        lualine_z = [
-          {
-            __unkeyed-1 = "location";
-            separator.right = "";
-            padding = 2;
-          }
-        ];
+        lualine_a = [{
+          __unkeyed-1 = "mode";
+          separator.left = "";
+          padding = 2;
+        }];
+        lualine_z = [{
+          __unkeyed-1 = "location";
+          separator.right = "";
+          padding = 2;
+        }];
       };
     };
   };

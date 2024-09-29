@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   colorschemes.catppuccin = {
     enable = true;
     settings = {
@@ -22,9 +22,7 @@
         mini.enabled = true;
         native_lsp = {
           enabled = true;
-          inlay_hints = {
-            background = true;
-          };
+          inlay_hints = { background = true; };
           underlines = {
             errors = [ "underline" ];
             hints = [ "underline" ];
