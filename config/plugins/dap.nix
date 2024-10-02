@@ -21,7 +21,6 @@
           command = "${pkgs.netcoredbg}/bin/netcoredbg";
           args = [ "--interpreter=vscode" ];
         };
-
         netcoredbg = {
           command = "${pkgs.netcoredbg}/bin/netcoredbg";
           args = [ "--interpreter=vscode" ];

@@ -45,22 +45,12 @@
 
     # Copy paste Clipboard
     {
-      mode = "n";
+      mode = [ "n" "v" ];
       action = ''"+y'';
       key = "<leader>y";
     }
     {
-      mode = "v";
-      action = ''"+y'';
-      key = "<leader>y";
-    }
-    {
-      mode = "n";
-      action = ''"+p'';
-      key = "<leader>p";
-    }
-    {
-      mode = "v";
+      mode = [ "n" "v" ];
       action = ''"+p'';
       key = "<leader>p";
     }
