@@ -43,28 +43,66 @@
       key = "<A-up>";
     }
 
-    # Copy paste Clipboard    
+    # Copy paste Clipboard
     {
       mode = "n";
-      action = "\"+y";
+      action = ''"+y'';
       key = "<leader>y";
     }
     {
       mode = "v";
-      action = "\"+y";
+      action = ''"+y'';
       key = "<leader>y";
     }
     {
       mode = "n";
-      action = "\"+p";
+      action = ''"+p'';
       key = "<leader>p";
     }
     {
       mode = "v";
-      action = "\"+p";
+      action = ''"+p'';
       key = "<leader>p";
     }
 
+    # Debugging
+    {
+      mode = "n";
+      key = "<leader>dB";
+      action =
+        "\n        <cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>\n      ";
+      options = {
+        silent = true;
+        desc = "Breakpoint Condition";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>db";
+      action = ":DapToggleBreakpoint<cr>";
+      options = {
+        silent = true;
+        desc = "Toggle Breakpoint";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>du";
+      action = "<cmd>lua require('dapui').toggle()<cr>";
+      options = {
+        silent = true;
+        desc = "Dap UI";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>da";
+      action = "<cmd>lua require('dap').continue({ before = get_args })<cr>";
+      options = {
+        silent = true;
+        desc = "Run with Args";
+      };
+    }
 
     # Oil
     {
@@ -90,9 +128,7 @@
       mode = "n";
       key = "<leader>ut";
       action = "<cmd>UndotreeToggle<CR>";
-      options = {
-        desc = "Undotree";
-      };
+      options = { desc = "Undotree"; };
     }
 
     # Lazygit
@@ -100,16 +136,14 @@
       mode = "n";
       key = "<leader>gg";
       action = "<cmd>LazyGit<CR>";
-      options = {
-        desc = "LazyGit (root dir)";
-      };
+      options = { desc = "LazyGit (root dir)"; };
     }
 
     # Commentary bindings
-    {
-      action = "<cmd>Commentary<CR>";
-      key = "<leader>/";
-    }
+    # {
+    # action = "<cmd>Commentary<CR>";
+    # key = "<leader>/";
+    # }
 
     # Telescope bindings
     {
@@ -150,17 +184,14 @@
     # }
 
     # Notify bindings
-
-    {
-      mode = "n";
-      key = "<leader>un";
-      action = ''
-        <cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>
-      '';
-      options = {
-        desc = "Dismiss All Notifications";
-      };
-    }
+    # {
+    #   mode = "n";
+    #   key = "<leader>un";
+    #   action = ''
+    #     <cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>
+    #   '';
+    #   options = { desc = "Dismiss All Notifications"; };
+    # }
 
     # Bufferline bindings
 
@@ -168,45 +199,35 @@
       mode = "n";
       key = "<Tab>";
       action = "<cmd>BufferLineCycleNext<cr>";
-      options = {
-        desc = "Cycle to next buffer";
-      };
+      options = { desc = "Cycle to next buffer"; };
     }
 
     {
       mode = "n";
       key = "<S-Tab>";
       action = "<cmd>BufferLineCyclePrev<cr>";
-      options = {
-        desc = "Cycle to previous buffer";
-      };
+      options = { desc = "Cycle to previous buffer"; };
     }
 
     {
       mode = "n";
       key = "<S-l>";
       action = "<cmd>BufferLineCycleNext<cr>";
-      options = {
-        desc = "Cycle to next buffer";
-      };
+      options = { desc = "Cycle to next buffer"; };
     }
 
     {
       mode = "n";
       key = "<S-h>";
       action = "<cmd>BufferLineCyclePrev<cr>";
-      options = {
-        desc = "Cycle to previous buffer";
-      };
+      options = { desc = "Cycle to previous buffer"; };
     }
 
     {
       mode = "n";
       key = "<leader>bd";
       action = "<cmd>bdelete<cr>";
-      options = {
-        desc = "Delete buffer";
-      };
+      options = { desc = "Delete buffer"; };
     }
   ];
 }

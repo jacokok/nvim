@@ -9,6 +9,8 @@
     ./lsp.nix
     ./cmp.nix
     ./none-ls.nix
+    ./dap.nix
+    ./mini.nix
   ];
 
   plugins = {
@@ -21,11 +23,6 @@
     # Auto-tagging
     ts-autotag = { enable = true; };
 
-    # Autopairs
-    nvim-autopairs = { enable = true; };
-
-    oil = { enable = true; };
-
     # Saves your last session when you exit
     persistence = { enable = true; };
 
@@ -33,8 +30,6 @@
     trouble = { enable = true; };
 
     lspkind = { enable = true; };
-
-    commentary = { enable = true; };
 
     # Todo comments
     todo-comments = { enable = true; };
@@ -51,18 +46,22 @@
     # noice = {
     #   enable = true;
     # };
+    oil = { enable = true; };
 
-    notify = {
-      enable = true;
-      timeout = 500;
-      topDown = true;
-    };
+    # notify = {
+    #   enable = true;
+    #   timeout = 500;
+    #   topDown = true;
+    # };
 
     # Markdown preview server
     markdown-preview = {
       enable = true;
       settings.theme = "dark";
     };
+
+    # markview = { enable = true; };
+    render-markdown = { enable = true; };
 
     web-devicons = { enable = true; };
 

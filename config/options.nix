@@ -22,14 +22,14 @@
 
     # Show line and column when searching
     ruler = true;
-    undofile = true;
+    # undofile = true; It can be annoying sometimes
     autoindent = true;
 
     # Global substitution by default
     gdefault = true;
 
     # Start scrolling when the cursor is X lines away from the top/bottom
-    scrolloff = 5;
+    scrolloff = 10;
     termguicolors = true;
   };
 

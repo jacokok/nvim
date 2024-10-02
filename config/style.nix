@@ -9,7 +9,7 @@
       integrations = {
         cmp = true;
         noice = true;
-        notify = true;
+        # notify = true;
         neotree = true;
         harpoon = true;
         gitsigns = true;
