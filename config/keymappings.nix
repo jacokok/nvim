@@ -1,4 +1,4 @@
-{ self, ... }: {
+{ config, ... }: {
   keymaps = [
     # Custom
     # Move line
@@ -54,7 +54,6 @@
       action = ''"+p'';
       key = "<leader>p";
     }
-
     # Debugging
     {
       mode = "n";
@@ -164,14 +163,26 @@
       action = "<cmd>Telescope buffers<CR>";
       key = "<leader>fb";
     }
-    # {
-    #   action = "<cmd>Telescope colorscheme<CR>";
-    #   key = "<leader>ch";
-    # }
-    # {
-    #   action = "<cmd>Telescope man_pages<CR>";
-    #   key = "<leader>fm";
-    # }
+    {
+      action = "<cmd>Telescope commands<CR>";
+      key = "<leader>fc";
+    }
+    {
+      action = "<cmd>Telescope marks<CR>";
+      key = "<leader>fm";
+    }
+    {
+      action = "<cmd>Telescope spell_suggest<CR>";
+      key = "<leader>fs";
+    }
+    {
+      action = "<cmd>Telescope treesitter<CR>";
+      key = "<leader>ft";
+    }
+    {
+      action = "<cmd>:noh<CR>";
+      key = "<leader>fr";
+    }
 
     # Notify bindings
     # {
@@ -182,6 +193,63 @@
     #   '';
     #   options = { desc = "Dismiss All Notifications"; };
     # }
+
+    #Code Actions
+    {
+      key = "<leader>cd";
+      action = "<cmd>lua vim.lsp.buf.definition()<cr>";
+      options.desc = "LSP Definition";
+    }
+    {
+      key = "<leader>cr";
+      action = "<cmd>lua vim.lsp.buf.references()<cr>";
+      options.desc = "LSP References";
+    }
+    {
+      key = "<leader>ci";
+      action = "<cmd>lua vim.lsp.buf.implementation()<cr>";
+      options.desc = "LSP Implementation";
+    }
+    {
+      key = "<leader>ct";
+      action = "<cmd>lua vim.lsp.buf.type_definition()<cr>";
+      options.desc = "LSP Type Definition";
+    }
+    {
+      key = "<leader>cs";
+      action = "<cmd>lua vim.lsp.buf.signature_help()<cr>";
+      options.desc = "LSP Signature Help";
+    }
+    {
+      key = "<leader>ch";
+      action = "<cmd>lua vim.lsp.buf.hover()<cr>";
+      options.desc = "LSP Hover";
+    }
+    {
+      key = "<leader>ca";
+      action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
+      options.desc = "LSP Code Action";
+    }
+    {
+      key = "<leader>cf";
+      action = "<cmd>lua vim.lsp.buf.formatting()<cr>";
+      options.desc = "LSP Formatting";
+    }
+    {
+      key = "<leader>ce";
+      action = "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>";
+      options.desc = "LSP Line Diagnostics";
+    }
+    {
+      key = "<leader>cn";
+      action = "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>";
+      options.desc = "LSP Next Diagnostic";
+    }
+    {
+      key = "<leader>cp";
+      action = "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>";
+      options.desc = "LSP Previous Diagnostic";
+    }
 
     # Bufferline bindings
 
