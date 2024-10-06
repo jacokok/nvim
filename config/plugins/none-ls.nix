@@ -5,7 +5,7 @@
       enable = true;
       settings = {
         cmd = [ "bash -c nvim" ];
-        debug = true;
+        # debug = true;
       };
       sources = {
         code_actions = {

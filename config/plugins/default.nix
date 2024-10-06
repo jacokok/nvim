@@ -11,14 +11,12 @@
     ./none-ls.nix
     ./dap.nix
     ./mini.nix
+    ./treesitter.nix
   ];
 
   plugins = {
     # Top Tab bar
     bufferline = { enable = true; };
-
-    # Includes all parsers for treesitter
-    treesitter = { enable = true; };
 
     # Auto-tagging
     ts-autotag = { enable = true; };

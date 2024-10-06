@@ -6,11 +6,14 @@
       #tsserver.enable = true; # TS/JS
       ts-ls.enable = true;
       cssls.enable = true; # CSS
-      tailwindcss.enable = true; # TailwindCSS
+      tailwindcss = {
+        enable = true;
+        filetypes = [ "html" "js" "ts" "jsx" "tsx" "mdx" "svelte" ];
+      };
       html.enable = true; # HTML
       #astro.enable = true; # AstroJS
       #phpactor.enable = true; # PHP
-      svelte.enable = false; # Svelte
+      svelte.enable = true; # Svelte
       #vuels.enable = false; # Vue
       pyright.enable = true; # Python
       gopls.enable = true; # Go
@@ -22,6 +25,7 @@
       csharp-ls.enable = true; # C#
       yamlls.enable = true; # YAML
       jsonls.enable = true; # JSON
+      # eslint.enable = true;
 
       lua-ls = {
         # Lua
