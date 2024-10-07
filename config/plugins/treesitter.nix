@@ -16,25 +16,25 @@
         };
       };
       indent = { enable = true; };
-      ensure_installed = [
-        "bash"
-        "c_sharp"
-        "dockerfile"
-        "json"
-        "lua"
-        "html"
-        "json"
-        "markdown"
-        "nix"
-        "regex"
-        "svelte"
-        "toml"
-        "typescript"
-        "vim"
-        "vimdoc"
-        "xml"
-        "yaml"
-      ];
+      # ensure_installed = [
+      #   "bash"
+      #   "c_sharp"
+      #   "dockerfile"
+      #   "json"
+      #   "lua"
+      #   "html"
+      #   "json"
+      #   "markdown"
+      #   "nix"
+      #   "regex"
+      #   "svelte"
+      #   "toml"
+      #   "typescript"
+      #   "vim"
+      #   "vimdoc"
+      #   "xml"
+      #   "yaml"
+      # ];
     };
   };
 }

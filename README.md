@@ -36,3 +36,9 @@ nix run .
   home.packages = [ inputs.nixvim-flake.packages.${system}.default ];
 }
 ```
+
+### Install Tree Sitter
+
+```bash
+TSInstall svelte
+```
