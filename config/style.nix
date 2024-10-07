@@ -2,6 +2,8 @@
   colorschemes.catppuccin = {
     enable = true;
     settings = {
+      term_colors = true;
+
       no_bold = false;
       no_italic = false;
       no_underline = false;
@@ -9,6 +11,7 @@
       integrations = {
         cmp = true;
         noice = true;
+        bufferline = true;
         # notify = true;
         neotree = true;
         harpoon = true;
@@ -20,6 +23,7 @@
         telescope.enabled = true;
         indent_blankline.enabled = true;
         mini.enabled = true;
+        lsp_trouble = true;
         native_lsp = {
           enabled = true;
           inlay_hints = { background = true; };

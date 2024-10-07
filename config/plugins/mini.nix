@@ -4,7 +4,8 @@
 
     modules = {
       icons = { };
-      comment = { mappings = { comment = "<leader>/"; }; };
+      # comment = { mappings = { comment = "<leader>/"; }; };
+      comment = { };
       pairs = { };
       # ai = { };
       surround = { };

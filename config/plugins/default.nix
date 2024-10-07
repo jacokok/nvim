@@ -12,17 +12,15 @@
     ./dap.nix
     ./mini.nix
     ./treesitter.nix
+    ./bufferline.nix
   ];
 
   plugins = {
-    # Top Tab bar
-    bufferline = { enable = true; };
-
     # Auto-tagging
     ts-autotag = { enable = true; };
 
     # Saves your last session when you exit
-    persistence = { enable = true; };
+    # persistence = { enable = true; };
 
     # Sidebar showing trouble and diagnsotics
     trouble = { enable = true; };
@@ -35,7 +33,34 @@
     # Nix expressions in Neovim
     nix = { enable = true; };
 
-    which-key = { enable = true; };
+    which-key = {
+      enable = true;
+      settings = {
+        icons = { group = "+"; };
+        spec = [
+          {
+            __unkeyed-1 = "<leader>u";
+            mode = "n";
+            group = "+ui";
+          }
+          {
+            __unkeyed-1 = "<leader>w";
+            mode = "n";
+            group = "+windows";
+          }
+          {
+            __unkeyed-1 = "<leader>c";
+            mode = [ "n" "v" ];
+            group = "+code";
+          }
+          {
+            __unkeyed-1 = "<leader>f";
+            mode = "n";
+            group = "+search";
+          }
+        ];
+      };
+    };
 
     lazygit = { enable = true; };
 
@@ -59,7 +84,7 @@
     };
 
     # markview = { enable = true; };
-    render-markdown = { enable = true; };
+    # render-markdown = { enable = true; };
 
     web-devicons = { enable = true; };
 

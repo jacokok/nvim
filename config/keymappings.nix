@@ -1,46 +1,236 @@
-{ config, ... }: {
+{
   keymaps = [
-    # Custom
+    #Better Up/Down
+    {
+      key = "j";
+      action = "v:count == 0 ? 'gj' : 'j'";
+      mode = [ "n" "x" ];
+      options = {
+        expr = true;
+        silent = true;
+      };
+    }
+    {
+      key = "<Down>";
+      action = "v:count == 0 ? 'gj' : 'j'";
+      mode = [ "n" "x" ];
+      options = {
+        expr = true;
+        silent = true;
+      };
+    }
+    {
+      key = "k";
+      action = "v:count == 0 ? 'gk' : 'k'";
+      mode = [ "n" "x" ];
+      options = {
+        expr = true;
+        silent = true;
+      };
+    }
+    {
+      key = "<Up>";
+      action = "v:count == 0 ? 'gk' : 'k'";
+      mode = [ "n" "x" ];
+      options = {
+        expr = true;
+        silent = true;
+      };
+    }
+
     # Move line
     {
       mode = "n";
-      action = ":m+<CR>==";
+      action = "<cmd>m .+1<cr>==";
       key = "<A-j>";
-    }
-    {
-      mode = "n";
-      action = ":m+<CR>==";
-      key = "<A-down>";
+      options = { desc = "Move Down"; };
     }
     {
       mode = "i";
-      action = "<Esc>:m+<CR>==gi";
+      action = "<esc><cmd>m .+1<cr>==gi";
       key = "<A-j>";
-    }
-    {
-      mode = "i";
-      action = "<Esc>:m+<CR>==gi";
-      key = "<A-down>";
+      options = { desc = "Move Down"; };
     }
     {
       mode = "n";
-      action = ":m-2<CR>==";
+      action = "<cmd>m .-2<cr>==";
       key = "<A-k>";
+      options = { desc = "Move Up"; };
+    }
+    {
+      mode = "i";
+      action = "<esc><cmd>m .-2<cr>==gi";
+      key = "<A-k>";
+      options = { desc = "Move Up"; };
+    }
+    {
+      mode = "v";
+      action = ":m '>+1<cr>gv=gv";
+      key = "<A-j>";
+      options = { desc = "Move Down"; };
+    }
+    {
+      mode = "v";
+      action = ":m '<-2<cr>gv=gv";
+      key = "<A-k>";
+      options = { desc = "Move Up"; };
+    }
+
+    # Move window
+    {
+      mode = "n";
+      key = "<C-h>";
+      action = "<C-w>h";
+      options = {
+        remap = true;
+        desc = "Go to Left Window";
+      };
     }
     {
       mode = "n";
-      action = ":m-2<CR>==";
-      key = "<A-up>";
+      key = "<C-l>";
+      action = "<C-w>l";
+      options = {
+        remap = true;
+        desc = "Go to Right Window";
+      };
     }
     {
-      mode = "i";
-      action = "<Esc>:m-2<CR>==gi";
-      key = "<A-up>";
+      mode = "n";
+      key = "<C-j>";
+      action = "<C-w>j";
+      options = {
+        remap = true;
+        desc = "Go to Lower Window";
+      };
     }
     {
-      mode = "i";
-      action = "<Esc>:m-2<CR>==gi";
-      key = "<A-up>";
+      mode = "n";
+      key = "<C-k>";
+      action = "<C-w>k";
+      options = {
+        remap = true;
+        desc = "Go to Upper Window";
+      };
+    }
+
+    # Toggle Options
+    {
+      key = "<leader>us";
+      action = "<cmd>set spell!<cr>";
+      options = { desc = "Toggle Spell Check"; };
+    }
+
+    # Resize window using <ctrl> arrow keys
+    {
+      mode = "n";
+      action = "<cmd>resize +2<cr>";
+      key = "<C-Up>";
+      options = { desc = "Increase Window Height"; };
+    }
+    {
+      mode = "n";
+      action = "<cmd>resize -2<cr>";
+      key = "<C-Down>";
+      options = { desc = "Decrease Window Height"; };
+    }
+    {
+      mode = "n";
+      action = "<cmd>vertical resize -2<cr>";
+      key = "<C-Left>";
+      options = { desc = "Decrease Window Width"; };
+    }
+    {
+      mode = "n";
+      action = "<cmd>vertical resize +2<cr>";
+      key = "<C-Right>";
+      options = { desc = "Increase Window Width"; };
+    }
+
+    # Windows
+    {
+      mode = "n";
+      action = "<c-w>";
+      key = "<leader>w";
+      options = {
+        desc = "Windows";
+        remap = true;
+      };
+    }
+    {
+      mode = "n";
+      action = "<C-W>s";
+      key = "<leader>-";
+      options = {
+        desc = "Split Window Below";
+        remap = true;
+      };
+    }
+    {
+      mode = "n";
+      action = "<C-W>v";
+      key = "<leader>|";
+      options = {
+        desc = "Split Window Right";
+        remap = true;
+      };
+    }
+    {
+      mode = "n";
+      action = "<C-W>c";
+      key = "<leader>wd";
+      options = {
+        desc = "Delete Window";
+        remap = true;
+      };
+    }
+
+    #Buffers
+    {
+      mode = "n";
+      key = "<S-h>";
+      action = "<cmd>bprevious<cr>";
+      options = { desc = "Prev Buffer"; };
+    }
+    {
+      mode = "n";
+      key = "<S-l>";
+      action = "<cmd>bnext<cr>";
+      options = { desc = "Next Buffer"; };
+    }
+    {
+      key = "<leader>bb";
+      action = "<cmd>e #<cr>";
+      mode = "n";
+      options.desc = "Switch to Other Buffer";
+    }
+
+    #Save File
+    {
+      mode = [ "n" "x" "i" "s" ];
+      key = "<C-s>";
+      action = "<cmd>w<cr><esc>";
+      options = { desc = "Save File"; };
+    }
+
+    #Better indenting
+    {
+      mode = [ "v" ];
+      key = "<";
+      action = "<gv";
+    }
+    {
+      mode = [ "v" ];
+      key = ">";
+      action = ">gv";
+    }
+
+    # Clear Search with escape
+    {
+      mode = [ "i" "n" ];
+      action = "<cmd>noh<cr><esc>";
+      key = "<esc>";
+      options = { desc = "Escape and Clear hlsearch"; };
     }
 
     # Copy paste Clipboard
@@ -54,6 +244,27 @@
       action = ''"+p'';
       key = "<leader>p";
     }
+    {
+      key = "<c-s-v>";
+      action = ''
+        function ()
+        	vim.api.nvim_paste(vim.fn.getreg('+'), true, -1)
+        end
+      '';
+      mode = [ "i" "c" "t" ];
+      lua = true;
+    }
+    {
+      key = "<C-S-c>";
+      action = ''"+y'';
+      mode = [ "n" "v" ];
+    }
+    {
+      key = "<C-S-v>";
+      action = ''"+p'';
+      mode = [ "n" "v" ];
+    }
+
     # Debugging
     {
       mode = "n";
@@ -99,11 +310,19 @@
       action = "<CMD>Oil<CR>";
       key = "-";
     }
+
     # ToggleTerm
     {
       mode = "n";
       action = "<CMD>ToggleTerm<CR>";
-      key = "`";
+      key = "<C-/>";
+      options = { desc = "Toggle Terminal"; };
+    }
+    {
+      mode = "t";
+      action = "<CMD>ToggleTerm<CR>";
+      key = "<C-/>";
+      options = { desc = "Toggle Terminal"; };
     }
 
     # Neo-tree bindings
@@ -127,12 +346,6 @@
       action = "<cmd>LazyGit<CR>";
       options = { desc = "LazyGit (root dir)"; };
     }
-
-    # Commentary bindings
-    # {
-    # action = "<cmd>Commentary<CR>";
-    # key = "<leader>/";
-    # }
 
     # Telescope bindings
     {
@@ -179,20 +392,13 @@
       action = "<cmd>Telescope treesitter<CR>";
       key = "<leader>ft";
     }
-    {
-      action = "<cmd>:noh<CR>";
-      key = "<leader>fr";
-    }
 
-    # Notify bindings
-    # {
-    #   mode = "n";
-    #   key = "<leader>un";
-    #   action = ''
-    #     <cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>
-    #   '';
-    #   options = { desc = "Dismiss All Notifications"; };
-    # }
+    # Clear search, diff update and redraw
+    {
+      mode = "n";
+      action = "Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>";
+      key = "<leader>ur";
+    }
 
     #Code Actions
     {
@@ -249,43 +455,6 @@
       key = "<leader>cp";
       action = "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>";
       options.desc = "LSP Previous Diagnostic";
-    }
-
-    # Bufferline bindings
-
-    {
-      mode = "n";
-      key = "<Tab>";
-      action = "<cmd>BufferLineCycleNext<cr>";
-      options = { desc = "Cycle to next buffer"; };
-    }
-
-    {
-      mode = "n";
-      key = "<S-Tab>";
-      action = "<cmd>BufferLineCyclePrev<cr>";
-      options = { desc = "Cycle to previous buffer"; };
-    }
-
-    {
-      mode = "n";
-      key = "<S-l>";
-      action = "<cmd>BufferLineCycleNext<cr>";
-      options = { desc = "Cycle to next buffer"; };
-    }
-
-    {
-      mode = "n";
-      key = "<S-h>";
-      action = "<cmd>BufferLineCyclePrev<cr>";
-      options = { desc = "Cycle to previous buffer"; };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>bd";
-      action = "<cmd>bdelete<cr>";
-      options = { desc = "Delete buffer"; };
     }
   ];
 }

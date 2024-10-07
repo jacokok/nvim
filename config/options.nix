@@ -22,7 +22,7 @@
 
     # Show line and column when searching
     ruler = true;
-    # undofile = true; It can be annoying sometimes
+    undofile = false;
     autoindent = true;
 
     # Global substitution by default
@@ -31,12 +31,9 @@
     # Start scrolling when the cursor is X lines away from the top/bottom
     scrolloff = 10;
     termguicolors = true;
+
+    cmdheight = 0;
   };
 
   globals.mapleader = " ";
-
-  autoCmd = [{
-    event = "TermOpen";
-    command = "setlocal nonumber norelativenumber";
-  }];
 }
