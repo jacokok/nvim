@@ -41,6 +41,12 @@
           "<CR>" = "cmp.mapping.confirm({ select = true })";
         };
       };
+      filetype = {
+        sql = {
+          sources =
+            [{ name = "buffer"; } { name = "vim-dadbod-completion"; }];
+        };
+      };
     };
     luasnip.enable = true;
 

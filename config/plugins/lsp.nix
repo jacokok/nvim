@@ -25,6 +25,7 @@
       csharp-ls.enable = true; # C#
       yamlls.enable = true; # YAML
       jsonls.enable = true; # JSON
+      sqls.enable = true;
       # eslint.enable = true;
 
       lua-ls = {

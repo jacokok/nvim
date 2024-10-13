@@ -13,6 +13,8 @@
     ./mini.nix
     ./treesitter.nix
     ./bufferline.nix
+    ./lazy.nix
+    ./extra.nix
   ];
 
   plugins = {
